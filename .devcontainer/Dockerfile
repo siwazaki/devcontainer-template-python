@@ -53,4 +53,4 @@ RUN	groupadd --gid $USER_GID $USERNAME \
     && cd $HOME
 
 USER vscode
-WORKDIR /workspace
+WORKDIR /workspaces
