@@ -1,0 +1,47 @@
+{
+    "name": "Ubuntu 22.04 dev",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "runArgs": [],
+    "remoteUser": "vscode",
+    "customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            // Set *default* container specific settings.json values on container create.
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "editor.formatOnSave": true
+            },
+            "extensions": [
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "MS-CEINTL.vscode-language-pack-ja",
+                "ms-python.vscode-pylance",
+                "ms-python.python",
+                "eamodio.gitlens",
+                "yzhang.markdown-all-in-one",
+                "donjayamanne.githistory",
+                "EditorConfig.EditorConfig",
+                "ms-python.black-formatter",
+                "ms-python.isort",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter-renderers",
+                "ms-toolsai.vscode-jupyter-slideshow",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "username": "vscode",
+            "uid": "automatic",
+            "gid": "automatic",
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": false,
+            "nonFreePackages": false
+        }
+    }
+}
