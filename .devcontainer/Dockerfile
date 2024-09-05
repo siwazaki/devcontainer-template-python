@@ -12,6 +12,7 @@ RUN apt-get update \
     xxd \
     wget \
     curl \
+    ssh \
     git \
     xz-utils \
     zip \
@@ -19,6 +20,8 @@ RUN apt-get update \
     libopencv-dev \
     libhdf5-dev \
     ca-certificates \
+    ninja-build \
+    build-essential \
     --no-install-recommends 
 
 ENV PYTHONPATH /workspaces
@@ -54,3 +57,6 @@ RUN	groupadd --gid $USER_GID $USERNAME \
 
 USER vscode
 WORKDIR /workspaces
+
+
+
